@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guía del Estudiante — Interfaz de Usuario - Desarrollo de Software - iTec | Google Antigravity 2.0 & UX/UI</title>
+  <meta name="description" content="Manual de estudio y desarrollo de software vivo con Google Antigravity 2.0, Gentle-AI, Engram y prototipado desde Figma para estudiantes de Interfaz de Usuario - Desarrollo de Software - iTec.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="reading-progress-bar"></div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="top-navbar">
+    <a href="#est-hero" class="nav-brand" title="Ir al inicio">
+      <span class="brand-icon">🪐</span>
+      <span class="brand-text">Antigravity<span style="color:var(--accent-purple);">2.0</span></span>
+      <span class="brand-badge">ESTUDIANTE</span>
+    </a>
+
+    <div class="nav-title-center">
+      <span>🎓 Interfaz de Usuario - Desarrollo de Software - iTec</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="action-btn" id="theme-toggle-btn" title="Alternar Modo Claro / Espacio Profundo" aria-label="Cambiar tema">☀️</button>
+      <button class="action-btn hamburger-btn" id="hamburger-btn" title="Abrir Menú de Contenidos" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Main Grid Layout -->
+  <div class="main-layout">
+
+    <!-- Left Sidebar (Table of Contents & Instant Search) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Mobile Drawer Header -->
+      <div class="sidebar-header-mobile">
+        <span class="sidebar-header-title">📖 Menú de Contenidos</span>
+        <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Cerrar menú">✕</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input" placeholder="Buscar temas, prompts..." autocomplete="off">
+        <span class="search-shortcut">/</span>
+      </div>
+
+      <!-- TOC: Guía del Estudiante -->
+      <nav class="toc-nav">
+        <div class="toc-heading">Contenido del Manual</div>
+        <a href="#est-clases" class="toc-link"><span>📺 Estructura de Clases</span> <span class="toc-badge">7 Videos</span></a>
+        <a href="#est-c1" class="toc-link"><span>🎬 C1: Mindset UX & IA</span> <span class="toc-badge">Gestalt</span></a>
+        <a href="#est-c2" class="toc-link"><span>🛠️ C2: Auto-Setup Windows</span> <span class="toc-badge">winget</span></a>
+        <a href="#est-c3" class="toc-link"><span>🛡️ C3: Reglas Globales & OS</span> <span class="toc-badge">always_on</span></a>
+        <a href="#est-c4" class="toc-link"><span>💬 C4: Entrevista UX 14P</span> <span class="toc-badge">Contexto</span></a>
+        <a href="#est-c4-producto" class="toc-link" style="padding-left:1.5rem;"><span>• Blueprint del Producto</span> <span class="toc-badge">Desafío</span></a>
+        <a href="#est-c5" class="toc-link"><span>📚 C5: Master Context Vivo</span> <span class="toc-badge">6 Docs</span></a>
+        <a href="#est-plantillas" class="toc-link" style="padding-left:1.5rem;"><span>• Plantillas de Contexto</span> <span class="toc-badge">Docs 1-6</span></a>
+        <a href="#est-sdd-tutorial" class="toc-link" style="padding-left:1.5rem;"><span>• Tutorial Gentle-AI SDD</span> <span class="toc-badge">SDD</span></a>
+        <a href="#est-c6" class="toc-link"><span>✂️ C6: Skills & Poda</span> <span class="toc-badge">Auditoría</span></a>
+        <a href="#est-c7" class="toc-link"><span>🌉 C7: Figma ➔ Prototipo Vivo</span> <span class="toc-badge">A11y</span></a>
+        <a href="#est-demo" class="toc-link"><span>💻 Proyecto Demo Rocket Pizza</span> <span class="toc-badge">100 pts</span></a>
+        <a href="#est-desafio" class="toc-link"><span>🏆 Desafío Integrador Final</span> <span class="toc-badge">Rúbrica</span></a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-viewport">
+
+      <!-- Hero Card -->
+      <section class="guide-hero" id="est-hero">
+        <div class="hero-eyebrow">🎓 Manual Oficial del Estudiante · iTec</div>
+        <h1 class="hero-title">Interfaz de Usuario & Desarrollo de Software <br><span class="gradient-text">Google Antigravity 2.0 & UX/UI</span></h1>
+        <p class="hero-desc">¡Bienvenido al Seminario! Aprendé a transformar tus diseños de experiencia de usuario creados en <strong>Figma</strong> en <strong>software vivo, accesible y responsivo</strong> utilizando Google Antigravity 2.0, memoria persistente Engram, reglas automáticas <code>always_on</code>, el protocolo <a href="https://github.com/Gentleman-Programming/gentle-ai" target="_blank" style="color:var(--accent-cyan);text-decoration:underline;">Gentle-AI (Spec-Driven Development / SDD)</a> y la biblioteca <a href="https://github.com/sickn33/agentic-awesome-skills" target="_blank" style="color:var(--accent-purple);text-decoration:underline;">Agentic Awesome Skills</a>.</p>
+        <div class="hero-badges-row">
+          <span class="hero-badge-item">🎨 Figma to Code</span>
+          <span class="hero-badge-item">⚡ HTML5 + TailwindCSS</span>
+          <span class="hero-badge-item">♿ Accesibilidad WCAG AA</span>
+          <span class="hero-badge-item">🧠 Memoria Engram</span>
+          <span class="hero-badge-item">🛡️ Always-On Rules</span>
+          <span class="hero-badge-item">🏛️ iTec 2026</span>
+        </div>
+      </section>
+
+      <!-- Tabla Resumen de Clases & Badges -->
+      <section id="est-clases">
+        <h2 class="section-title">📺 Estructura del Seminario & Progresión de Badges</h2>
+        <p>El seminario está estructurado en 7 clases dinámicas de corta duración (máx. 15 min cada una) diseñadas para articular la teoría de UX/UI con el desarrollo de software vivo:</p>
+        
+        <div class="table-wrapper" style="margin-top:1rem;margin-bottom:2rem;">
+          <div class="table-scroll-hint">↔️ Deslizá horizontalmente para ver la tabla completa</div>
+          <table class="editorial-table">
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Duración</th>
+                <th>Enunciado & Foco Pedagógico</th>
+                <th>Concepto UX / Herramienta</th>
+                <th>Insignia / Entregable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>01</strong></td>
+                <td>12 min</td>
+                <td><strong>El Mindset UX en Antigravity 2.0</strong></td>
+                <td>Senior Product Engineer, interfaz multimodelo y primer maquetado en vivo.</td>
+                <td>Práctica 1: Primer Componente UI en HTML/CSS</td>
+              </tr>
+              <tr>
+                <td><strong>02</strong></td>
+                <td>10 min</td>
+                <td><strong>Auto-Setup Transparente en Windows</strong></td>
+                <td>Instalación desatendida con <code>winget</code> (Node.js LTS, Git, PowerShell).</td>
+                <td>🎖️ <strong>Badge 1: Antigravity Pilot</strong></td>
+              </tr>
+              <tr>
+                <td><strong>03</strong></td>
+                <td>14 min</td>
+                <td><strong>Sistema Operativo & Reglas Globales</strong></td>
+                <td>Constitución del agente con <code>trigger: always_on</code>, 5 estados y WCAG AA.</td>
+                <td>🛡️ <strong>Badge 2: Gentle-AI Knight</strong></td>
+              </tr>
+              <tr>
+                <td><strong>04</strong></td>
+                <td>15 min</td>
+                <td><strong>Entrevista UX de 14 Preguntas</strong></td>
+                <td>Levantamiento de Personas, Journey Map y Arquitectura de Información.</td>
+                <td>Práctica 4: Responder 14P</td>
+              </tr>
+              <tr>
+                <td><strong>05</strong></td>
+                <td>14 min</td>
+                <td><strong>Master Context Vivo (6 Documentos)</strong></td>
+                <td>Autogeneración en <code>docs/contexto/</code> con ADRs fechados cronológicamente.</td>
+                <td>📚 <strong>Badge 3: Context Architect</strong></td>
+              </tr>
+              <tr>
+                <td><strong>06</strong></td>
+                <td>12 min</td>
+                <td><strong>Skills Agenticas & Poda Inteligente</strong></td>
+                <td>Clonado de <code>agentic-awesome-skills</code> y poda según contexto frontend.</td>
+                <td>✂️ <strong>Badge 4: Skill Hunter</strong></td>
+              </tr>
+              <tr>
+                <td><strong>07</strong></td>
+                <td>15 min</td>
+                <td><strong>El Puente Figma ➔ Software Vivo</strong></td>
+                <td>Ingesta multimodal de wireframes, SPA viva y Desafío Integrador EFI.</td>
+                <td>🏆 <strong>Boss: Full-Stack UX Engineer</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 01: EL MINDSET UX EN ANTIGRAVITY 2.0
+           ========================================================================= -->
+      <section id="est-c1" class="class-module-card">
+        <div class="badge-pill">🎬 CLASE 01 · 12 MIN</div>
+        <h2 class="section-title">Clase 01: El Mindset del Desarrollador UX & Google Antigravity 2.0</h2>
+        
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje</div>
+          <p>Comprender la transición del rol tradicional de programador al de <strong>Senior Product Engineer y Director Técnico de la Inteligencia Artificial</strong>, aplicando las <strong>Leyes de Gestalt</strong> y la visión espacial multimodelo.</p>
+        </div>
+
+        <h3 class="sub-title">1.1. De Escribir Código a Orquestar Experiencias</h3>
+        <div class="feature-grid-2col" style="margin-bottom:1.5rem;">
+          <div class="feature-card" style="border-left:4px solid var(--accent-rose);">
+            <div class="card-title" style="color:var(--accent-rose);">❌ Desarrollo Tradicional Aislado</div>
+            <div class="card-desc">
+              • Maquetar HTML/CSS línea a línea sin visión integral de producto.<br>
+              • Olvidar la accesibilidad (A11y) y los 5 estados de los botones.<br>
+              • Reescribir código constantemente por falta de claridad en el flujo UX.
+            </div>
+          </div>
+          <div class="feature-card" style="border-left:4px solid var(--accent-emerald);">
+            <div class="card-title" style="color:var(--accent-emerald);">⚡ Desarrollo Agentico con Antigravity</div>
+            <div class="card-desc">
+              • El estudiante actúa como <strong>Director Técnico y Diseñador UX</strong>.<br>
+              • Antigravity planifica y genera código semántico, responsivo y accesible.<br>
+              • Supervisión de los 5 Pilares UX: <em>Usabilidad, Accesibilidad, Utilidad, Rendimiento y Emoción</em>.
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">1.2. Tour por la Interfaz de Antigravity 2.0</h3>
+        <div class="table-wrapper" style="margin-bottom:1.5rem;">
+          <table class="editorial-table">
+            <thead>
+              <tr><th>Elemento de Interfaz</th><th>Ubicación</th><th>Función en el Flujo UX</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Barra Lateral (`Projects`)</strong></td><td>Extremo Izquierdo</td><td>Historial de chats, proyectos y tareas en segundo plano.</td></tr>
+              <tr><td><strong>Chat Central de Agentes</strong></td><td>Centro</td><td>Diálogo directo con la IA y adjuntado de wireframes de Figma.</td></tr>
+              <tr><td><strong>Selector Multimodelo</strong></td><td>Inferior</td><td>Elección del motor de razonamiento (<strong>Gemini 3.7 Flash High</strong>).</td></tr>
+              <tr><td><strong>Explorador del Workspace</strong></td><td>Panel Derecho</td><td>Inspección de <code>index.html</code>, <code>style.css</code>, <code>app.js</code> y <code>docs/contexto/</code> en vivo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">1.3. Demostración "WOW Effect": Maquetado en Vivo en 2 Minutos</h3>
+        <p>Probá la velocidad de Antigravity 2.0 enviando este prompt para crear tu primer componente interactivo sin escribir una sola línea de código a mano:</p>
+
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT CLASE 1</span>
+              <span class="code-hint" style="color:var(--text-muted); font-size:0.75rem; margin-left:0.5rem;">WOW Effect — Maquetado en Vivo</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, genera un componente de tarjeta de presentación moderna en HTML5 semántico y CSS puro con diseño en tema oscuro, gradiente violeta y un botón hover.</code></div>
+        </div>
+
+        <div class="alert-box purple">
+          <div class="alert-title">🧪 Ejercicio Práctico Paso a Paso para Alumnos (Clase 1)</div>
+          <p>1. Abrí Google Antigravity 2.0 y seleccioná tu proyecto en la barra lateral.<br>
+             2. Asegurate de tener seleccionado <em>Gemini 3.7 Flash High</em> en el selector multimodelo del panel inferior.<br>
+             3. Enviá el prompt de maquetado en vivo en el chat para que el agente cree la tarjeta.<br>
+             4. Abrí el archivo <code>index.html</code> generado en el explorador del workspace y visualizalo en tu navegador web.</p>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 02: AUTO-SETUP TRANSPARENTE
+           ========================================================================= -->
+      <section id="est-c2" class="class-module-card">
+        <div class="badge-pill">🛠️ CLASE 02 · 10 MIN</div>
+        <h2 class="section-title">Clase 02: Auto-Setup Transparente del Entorno en Windows</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & 🎖️ Badge 1: Antigravity Pilot</div>
+          <p>Configurar automáticamente el ambiente de desarrollo (Node.js LTS, Git y PowerShell) sin abrir páginas externas, sin configurar variables PATH a mano y sin tocar la consola del sistema.</p>
+        </div>
+
+        <h3 class="sub-title">2.1. El Dolor Tradicional vs Automatización con `winget`</h3>
+        <p>En el desarrollo tradicional, los estudiantes pierden hasta una clase entera descargando instaladores <code>.exe</code>, lidiando con políticas bloqueadas de PowerShell y agregando rutas al PATH. Con Antigravity, el asistente ejecuta el comando del Administrador de Paquetes de Windows (<code>winget</code>) en segundo plano de manera 100% desatendida.</p>
+
+        <h3 class="sub-title">2.2. Prompt Maestro de Auto-Setup Transparente</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 1: AUTO-SETUP TRANSPARENTE · CLASE 2</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, por favor configurá mi ambiente de desarrollo en Windows de forma transparente:
+
+1. Revisá si Node.js y Git están instalados. Si no lo están, usá winget para instalarlos en mi sistema.
+2. Verificá que npm y git funcionen correctamente.
+3. Habilitá la ejecución de scripts en PowerShell si está bloqueada.
+4. Mostrá un resumen transparente de todo lo que verificaste e instalaste.</code></div>
+        </div>
+
+        <h3 class="sub-title">2.3. Tabla de Verificación de Salud del Entorno</h3>
+        <p>Al finalizar la ejecución del prompt, Antigravity mostrará un reporte de confirmación:</p>
+        <div class="table-wrapper">
+          <table class="editorial-table">
+            <thead><tr><th>Herramienta</th><th>Comando de Prueba</th><th>Estado Esperado</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Node.js</strong></td><td><code>node -v</code></td><td><code>v20.x.x (LTS)</code> ✅</td></tr>
+              <tr><td><strong>NPM Package Manager</strong></td><td><code>npm -v</code></td><td><code>v10.x.x</code> ✅</td></tr>
+              <tr><td><strong>Git Version Control</strong></td><td><code>git --version</code></td><td><code>git version 2.4x.x</code> ✅</td></tr>
+              <tr><td><strong>PowerShell Scripts</strong></td><td><code>Get-ExecutionPolicy</code></td><td><code>RemoteSigned</code> ✅</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 03: REGLAS GLOBALES & SISTEMA OPERATIVO
+           ========================================================================= -->
+      <section id="est-c3" class="class-module-card">
+        <div class="badge-pill">🛡️ CLASE 03 · 14 MIN</div>
+        <h2 class="section-title">Clase 03: Sistema Operativo de Antigravity & Reglas Globales (Always-On)</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & 🛡️ Badge 2: Gentle-AI Knight</div>
+          <p>Inyectar una <strong>Constitución Operativa</strong> permanente en el agente para evitar alucinaciones, garantizar estándares de accesibilidad WCAG AA, los 5 estados UI y adoptar el protocolo <a href="https://github.com/Gentleman-Programming/gentle-ai" target="_blank" style="color:var(--accent-cyan);text-decoration:underline;">Gentle-AI</a>.</p>
+        </div>
+
+        <h3 class="sub-title">3.1. Los 6 Pilares del Antigravity Operating System</h3>
+        <div class="feature-grid-3col" style="margin-bottom:1.5rem;">
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 1</span>
+            <div class="card-title">Senior Product Engineer</div>
+            <div class="card-desc">Explicar el <strong>POR QUÉ (Why)</strong> antes del <strong>CÓMO (How)</strong>. Pragmatismo, velocidad y UX sobresaliente.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 2</span>
+            <div class="card-title">Tech Stack Defaults</div>
+            <div class="card-desc">SPA en HTML5 semántico + TailwindCSS + JavaScript Vanilla en cliente + persistencia en LocalStorage.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 3</span>
+            <div class="card-title">Definition of Done (DoD)</div>
+            <div class="card-desc">Contraste WCAG AA (4.5:1), navegación operable por teclado (<code>:focus-visible</code>) y 5 estados UI.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 4</span>
+            <div class="card-title">Guards de Negocio</div>
+            <div class="card-desc">Centralizados en <code>docs/contexto/</code> (glosario y decisiones con confirmación previa del usuario).</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 5</span>
+            <div class="card-title">Master Context (6 Docs)</div>
+            <div class="card-desc">Estructura sagrada en <code>docs/contexto/</code> sin dispersar archivos sueltos en la raíz.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 6</span>
+            <div class="card-title">Flujo Adaptativo & SDD</div>
+            <div class="card-desc">Fast-Path directo para fixes de 1 archivo vs ciclo SDD estructurado para cambios de >2 archivos.</div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">3.2. Prompt Maestro de Reglas Globales & Memoria Persistente</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 2: REGLAS GLOBALES · TRIGGER ALWAYS_ON · CLASE 3</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>[REGLAS GLOBALES DE ANTIGRAVITY - OPERATING SYSTEM & PROTOCOLO MANDATORIO]
+
+Antigravity, por favor configurá e integrá el Sistema Operativo y Reglas Globales de este proyecto basados en Gentle-AI (https://github.com/Gentleman-Programming/gentle-ai):
+
+1. GUARDÁ EN TU MEMORIA PERSISTENTE (mem_save):
+   - Registrá el Operating System del proyecto con sus 6 secciones de ingeniería:
+     1) Persona & Mentalidad: Senior Product Engineer (Explicar el Why antes del How, speed-to-market, pragmatismo y UX sobresaliente).
+     2) Tech Stack & Defaults: SPA / Vite / TypeScript / HTML5 semántico + Tailwind CSS / 5 estados de componentes (Default, Hover, Active, Focus, Disabled) + IndexedDB/LocalStorage.
+     3) Definition of Done (DoD): Justificación técnica (Why/How), pruebas/tipos, verificación visual de estados y contraste WCAG AA (4.5:1), código limpio sin basura.
+     4) Guards de Reglas de Negocio & Telemetría: Centralizados en docs/contexto/ (glosario.md, decisiones.md y arquitectura.md sin dispersar archivos sueltos). Cambios requieren aprobación previa.
+     5) Master Context: 6 documentos vivos en docs/contexto/ (arquitectura, convenciones, decisiones, glosario, flujo-de-trabajo, errores-conocidos).
+     6) Flujo de Trabajo Adaptativo & SDD: Fast-Path directo para fixes de 1 archivo; ciclo SDD estructurado (explore ➔ propose ➔ tasks ➔ apply ➔ verify) para tareas complejas (>2 archivos); memoria Engram (mem_context, mem_save, mem_session_summary).
+
+2. CREACIÓN AUTOMÁTICA DEL ARCHIVO DE REGLAS (ALWAYS ON):
+   - Creá la carpeta .agents/rules/ si no existe.
+   - Creá el archivo .agents/rules/antigravity_rules.md con encabezado YAML 'trigger: always_on' conteniendo estas 6 reglas completas para que queden activas de forma global y permanente en todas las sesiones.
+
+3. CONFIRMACIÓN:
+   - Confirmame el resumen de las reglas activadas, el guardado en memoria y los archivos creados.</code></div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 04: ENTREVISTA UX DE 14 PREGUNTAS
+           ========================================================================= -->
+      <section id="est-c4" class="class-module-card">
+        <div class="badge-pill">💬 CLASE 04 · 15 MIN</div>
+        <h2 class="section-title">Clase 04: Levantamiento de Contexto UX: Entrevista de 14 Preguntas</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & Práctica 4</div>
+          <p>Realizar una entrevista guiada en 5 bloques pedagógicos que articulan los conceptos de <strong>Personas, Journey Mapping, Card Sorting, Design Tokens y Límites Técnicos</strong> antes de escribir código.</p>
+        </div>
+
+        <h3 class="sub-title">4.1. El Principio de Claridad en UX</h3>
+        <p>Un prompt vago como <em>"haceme una página de pizzas"</em> produce código genérico y desorganizado. La entrevista de 14 preguntas divide el problema en 5 bloques lógicos para alimentar automáticamente el Master Context.</p>
+
+        <div class="alert-box purple" style="margin-bottom:1.5rem;">
+          <div class="alert-title">🧭 Brújula Pedagógica: Conocé el Producto Final antes de Entrevistar</div>
+          <p>Para responder con precisión las 14 preguntas y no dejar decisiones críticas libradas al azar de la IA, tu equipo debe conocer de antemano <strong>cómo debe ser el producto a producir en el Desafío Integrador Final (100 Puntos)</strong>. A continuación tenés el blueprint detallado del software y la matriz táctica de qué pedir en cada bloque de la entrevista.</p>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           BLUEPRINT DEL PRODUCTO FINAL PARA LA ENTREVISTA (CLASE 4)
+           ========================================================================= -->
+      <section id="est-c4-producto">
+        <h2 class="section-title">🎯 4.2. ¿Cómo debe ser el Producto a Producir en el Desafío Final? (Blueprint para la Entrevista)</h2>
+        <p>El producto a maquetar no es un sitio estático plano ni un backend sobrecargado: es una <strong>Single Page Application (SPA) viva, interactiva, responsiva y accesible</strong> que materializa el flujo principal del ejemplo de <strong>Rocket Pizza</strong>. Aquí están los 6 pilares innegociables que debés tener en mente al responder las preguntas:</p>
+
+        <div class="feature-grid-3col">
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 1 · ARQUITECTURA</span>
+            <div class="card-title">🌐 SPA Fluida en Cliente Puro</div>
+            <div class="card-desc">Todo el código vive en <code>index.html</code>, <code>style.css</code> y <code>app.js</code>. Navegación instantánea entre secciones por desplazamiento suave (smooth scroll) o hash DOM, sin recargas de página ni servidores locales.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 2 · ALCANCE DEL FLUJO</span>
+            <div class="card-title">🚀 2 a 3 Vistas/Secciones Clave</div>
+            <div class="card-desc">1) <strong>Hero</strong> con identidad, titular Gestalt y CTA primario. 2) <strong>Catálogo</strong> con 4 a 6 tarjetas con datos de muestra del proyecto EFI. 3) <strong>Formulario funcional</strong> que dispara un Modal de éxito.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 3 · MICROINTERACCIONES</span>
+            <div class="card-title">🔘 Los 5 Estados Obligatorios</div>
+            <div class="card-desc">Cada control (botones, tarjetas, inputs) debe implementar: <strong>Default</strong>, <strong>Hover</strong>, <strong>Active</strong> (efecto táctil), <strong>Focus</strong> (anillo <code>:focus-visible</code> para teclado) y <strong>Disabled</strong> (opacidad 50%).</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 4 · SISTEMA DE COLOR</span>
+            <div class="card-title">🌓 Dark/Light Mode & WCAG AA</div>
+            <div class="card-desc">Selector de tema con contraste mínimo 4.5:1 verificado en ambos modos, persistencia en <code>localStorage</code> y clase de seguridad <code>.force-text-white</code> en botones de acento para evitar textos grises ilegibles.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 5 · ACCESIBILIDAD</span>
+            <div class="card-title">⌨️ Prueba de la Mano Atada</div>
+            <div class="card-desc">Navegabilidad 100% operable por teclado con <code>Tab</code>, <code>Shift+Tab</code>, <code>Enter</code> y cierre de modales con <code>Escape</code>. Semántica HTML5 nativa y atributos <code>alt</code> descriptivos en imágenes.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PILAR 6 · LÍMITES TÉCNICOS</span>
+            <div class="card-title">⛔ Frontend Puro (Sin Backend)</div>
+            <div class="card-desc">Tailwind CSS (CDN) + Vanilla JS. <strong>PROHIBIDO</strong>: Node.js, Express, Python, SQL, MongoDB, Firebase o frameworks pesados como React/Angular para este hito. Debe abrirse directo en el navegador.</div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">📋 4.3. Matriz Táctica: ¿Qué Pedirle a Antigravity en cada Bloque de la Entrevista?</h3>
+        <p>Utilizá esta matriz como guía de vuelo de tu equipo para responder las 14 preguntas de la Clase 4, conectando cada pregunta con los requisitos evaluados en la rúbrica del Desafío Final:</p>
+
+        <div class="table-wrapper">
+          <div class="table-scroll-hint">↔️ Deslizá horizontalmente para ver la tabla completa</div>
+          <table class="editorial-table">
+            <thead>
+              <tr>
+                <th style="width:160px;">Bloque de Entrevista</th>
+                <th style="width:80px;">Preguntas</th>
+                <th>Qué Debe Pedir el Alumno (Requisito del Producto Final)</th>
+                <th>Ejemplo Concreto de Respuesta del Equipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bloque 1: Identidad, Usuarios y Glosario</strong></td>
+                <td><code>P1, P2, P3</code></td>
+                <td>
+                  • Nombre y propósito del proyecto de referencia: Rocket Pizza Lunar (pizzería espacial con entregas a domos y bases lunares en 15 min luz).<br>
+                  • 2 Arquetipos de usuario ("Personas"): Kevin (minero espacial fatigado con guantes en tablet industrial y conexión satelital lenta) y Xylar (marciano fotosintético con visión sensible).<br>
+                  • Glosario de rotulado (Labeling) en lenguaje natural humano: "Lanzar Pedido" vs <code>Execute_Order</code>, "Hangar de Pizzas" vs <code>Catalog_Grid</code>, "Historial de Vuelo" vs <code>Order_History_Logs</code>.
+                </td>
+                <td>
+                  <em>"Se llamará 'Rocket Pizza Lunar' y servirá para que astronautas y colonizadores en la Luna configuren y pidan pizzas espaciales con entrega rápida. Persona 1: Kevin (minero espacial con guantes en tablet industrial, requiere botones táctiles grandes de al menos 48px y formularios cortos). Persona 2: Xylar (marciano con visión fotosensible, requiere modo oscuro con alto contraste). En labeling usaremos 'Lanzar Pedido', 'Hangar de Pizzas' e 'Historial de Vuelo'."</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Bloque 2: Estructura, SPA y Figma</strong></td>
+                <td><code>P4, P5, P6</code></td>
+                <td>
+                  • Arquitectura SPA en un solo <code>index.html</code> con 3 secciones: Navbar fija (logo y toggle Espacio Profundo / Nebulosa Solar), Hero con CTA "Lanzar Pedido", Catálogo de 6 pizzas espaciales y Formulario de Teletransporte con Modal accesible.<br>
+                  • 6 tarjetas interactivas estructuradas según Gestalt con badges de especie consumidora, precios en Créditos Lunares (<code>CL</code>) y botón "Ver Ficha".<br>
+                  • Formulario interactivo con selector de domo y bio-ingredientes que al enviar abra un <strong>Modal Accesible de Bio-compatibilidad y confirmación</strong> sin recargar la página.
+                </td>
+                <td>
+                  <em>"Estructura SPA: 1. Navbar fija con logo y toggle de tema, 2. Hero con CTA 'Ordenar Pizza Espacial', 3. Catálogo de 6 pizzas galácticas filtradas por especie (Astronautas, Marcianos, Cyborgs, Silicio) con precio en Créditos Lunares (CL) y botón 'Ver Ficha', 4. Formulario de teletransporte a domos lunares que al enviar abra un Modal accesible de bio-compatibilidad y confirmación sin recargar."</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Bloque 3: Sistema de Diseño & A11y</strong></td>
+                <td><code>P7, P8, P9, P10</code></td>
+                <td>
+                  • Paleta semántica espacial: Morado Propulsión (#9333ea / #c084fc), Cyan Rayo Láser (#06b6d4), Créditos Lunares en Ámbar (#fbbf24), Éxito (#10b981) y Peligro Radiación (#ef4444).<br>
+                  • Selector Dark/Light: Fondo Dark Espacio Profundo (#020617) y Light Nebulosa Solar (#f8fafc) con ratio WCAG AA (4.5:1).<br>
+                  • Maquetado Mobile-First (1 columna táctil en tablet espacial; 3 columnas en desktop).<br>
+                  • <strong>Los 5 estados de interacción obligatorios</strong> en cada control con anillo <code>:focus-visible</code> de alto contraste para guantes espaciales.
+                </td>
+                <td>
+                  <em>"Color primario Morado espacial (#9333ea), Acento Cyan (#06b6d4), Éxito Verde (#10b981) y Alerta Ámbar (#f59e0b). Fondo Dark Espacio Profundo (#020617) y Light (#f8fafc). Tipografía Outfit para títulos y Plus Jakarta Sans para interfaz. En móvil 1 columna táctil y en desktop 3 columnas. Botones con los 5 estados y anillo brillante :focus-visible para navegación por teclado."</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Bloque 4: Decisiones Técnicas y Límites</strong></td>
+                <td><code>P11, P12</code></td>
+                <td>
+                  • Stack ligero: HTML5 semántico + Tailwind CSS v3 vía CDN + JavaScript Vanilla limpio.<br>
+                  • <strong>Límites y Prohibiciones Firmes</strong>: PROHIBIDO backend (Node, Express, Python), PROHIBIDO bases de datos complejas (SQL/Firebase) y PROHIBIDO frameworks pesados (React, Angular). Toda la interacción corre en cliente con <code>localStorage</code> (<code>rocket_pizza_orders</code>, <code>rocket_pizza_cart</code>) y cálculo reactivo en Créditos Lunares (<code>CL</code>).
+                </td>
+                <td>
+                  <em>"Usaremos Tailwind CSS v3 vía CDN con paleta espacial extendida y Vanilla JS puro. PROHIBIDO crear backend con Node, bases de datos SQL y frameworks pesados como React. Toda la lógica del catálogo, carruseles, carrito en Créditos Lunares (CL) y cambio de tema corre en el navegador sin dependencias de servidor."</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Bloque 5: Flujo de Trabajo, DoD y Gotchas</strong></td>
+                <td><code>P13, P14</code></td>
+                <td>
+                  • Definition of Done (DoD) alineado a la rúbrica de 100 puntos (Fidelidad a Figma, prueba de la mano atada por teclado, contraste verificado).<br>
+                  • Prevención de gotchas: <code>overflow-x: hidden</code> para evitar desbordes móviles, clase de seguridad <code>.force-text-white</code> en botones morados de acento y uso estricto de etiquetas semánticas <code>&lt;button&gt;</code>.
+                </td>
+                <td>
+                  <em>"DoD: 1. Idéntico al wireframe de Figma, 2. Superar la Prueba de la Mano Atada (navegación 100% por teclado con Tab y Enter), 3. Conmutador de tema verificado con .force-text-white en botones morados, 4. Cero desborde horizontal (overflow-x: hidden), 5. Los 6 archivos en docs/contexto/ y reporte SDD verificado."</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-title">4.4. Prompt Entrevistador de Contexto UX (14 Preguntas Completas)</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 3: ENTREVISTA UX DE 14 PREGUNTAS · CLASE 4</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, quiero definir la idea y el contexto inicial de mi aplicación web basándome en los conceptos de UX/UI y en mi prototipo de Figma.
+
+Por favor actúa como un Diseñador UX & Arquitecto Frontend paciente. Inicia una entrevista guiada haciéndome las siguientes 14 PREGUNTAS PEDAGÓGICAS Y CLARAS sobre mi proyecto (pensadas para estudiantes que articulan UX/UI con desarrollo web).
+
+En cada pregunta, incluye su breve explicación (¿Para qué sirve?) y los ejemplos de respuesta para que sepa exactamente qué responder:
+
+--- 🎯 BLOQUE 1: IDENTIDAD, USUARIOS Y GLOSARIO (Alimenta arquitectura.md y glosario.md) ---
+
+1. 🎯 NOMBRE Y PROPÓSITO DEL SITIO WEB:
+   - 💡 ¿Para qué sirve?: Define la identidad de tu producto y el problema real que resuelve para el usuario final.
+   - 📌 Ejemplos de lo que podés responder:
+     * Opción A (Gastronomía Espacial): "Se llamará 'Rocket Pizza Lunar' y servirá para que astronautas y colonizadores en la Luna configuren y pidan pizzas espaciales con entrega rápida."
+     * Opción B (Eventos Culturales): "Se llamará 'CultivaRío 2026' y servirá para mostrar recitales, talleres culturales, mapa del predio y reservar entradas."
+     * Opción C (Servicios / Mascotas): "Se llamará 'Huellitas Felices' y permitirá publicar mascotas rescatadas en adopción y recibir donaciones."
+
+2. 👤 ARQUETIPOS DE USUARIO ("PERSONAS") Y PUNTOS DE DOLOR:
+   - 💡 ¿Para qué sirve?: Diseñamos para humanos reales con limitaciones y contextos específicos (Clase 6 de UX: Kevin y Xylar).
+   - 📌 Ejemplos de lo que podés responder:
+     * "Persona 1: Kevin (trabajador fatigado, usa guantes en tablet industrial con conexión satelital inestable. Punto de dolor: formularios largos y botones chicos). Persona 2: Turista con visión reducida (necesita alto contraste y fuentes grandes)."
+
+3. 📖 ROTULADO Y GLOSARIO ORIENTADO AL USUARIO (LABELING):
+   - 💡 ¿Para qué sirve?: Evita jerga técnica de desarrollador y define etiquetas claras en lenguaje natural comprensible (Clase 7 de UX).
+   - 📌 Ejemplos de lo que podés responder:
+     * "Usar 'Historial de Pedidos' en vez de 'Transacciones_Log_V2', 'Pedir Ahora' en vez de 'Execute_Order', 'Lineup' para la grilla de artistas, 'Pase General' para las entradas."
+
+--- 🧩 BLOQUE 2: ESTRUCTURA, ARQUITECTURA DE INFORMACIÓN Y FIGMA (Alimenta arquitectura.md y convenciones.md) ---
+
+4. 🧱 SECCIONES PRINCIPALES Y FLUJO DE NAVEGACIÓN (SPA):
+   - 💡 ¿Para qué sirve?: Es el esqueleto de tu página (Wireframe de Figma) organizado mediante Card Sorting para una navegación sin fricción.
+   - 📌 Ejemplos de lo que podés responder:
+     * "1. Barra superior fija con logo y cambio de tema, 2. Portada (Hero) con CTA llamativo 'Ver Menú', 3. Catálogo de Tarjetas con filtros por categoría, 4. Formulario de Reserva/Pedido con resumen interactivo, 5. Pie de página (Footer) con redes."
+
+5. 🖼️ ANATOMÍA DE TARJETAS Y DATOS DE MUESTRA:
+   - 💡 ¿Para qué sirve?: Aplica las leyes de Gestalt (proximidad y semejanza) para agrupar visualmente la información repetitiva.
+   - 📌 Ejemplos de lo que podés responder:
+     * Estructura de cada tarjeta: "Foto ilustrativa, Badge de categoría, Título en h3 (bold), Precio/Fecha destacado y botón de acción 'Ver Detalles'."
+     * Datos de muestra (4 a 6 items): "6 pizzas lunares (ej: '4 Quesos Lunares', 'Pepperoni Meteoro', 'Veggie Galáctica', 'Suprema Domo A')."
+
+6. 📝 FORMULARIO INTERACTIVO Y FEEDBACK VISUAL:
+   - 💡 ¿Para qué sirve?: Optimiza la relación esfuerzo-beneficio del usuario (Clase 2 de UX) con validación inmediata y confirmación clara.
+   - 📌 Ejemplos de lo que podés responder:
+     * "Debe pedir: Nombre completo, Correo electrónico, Selección de producto en dropdown, Selector de cantidad con botones +/- y botón 'Confirmar Pedido'. Al enviar, mostrar un aviso o modal verde de éxito sin recargar la página."
+
+--- 🎨 BLOQUE 3: SISTEMA DE DISEÑO, COLORES SEMÁNTICOS Y ACCESIBILIDAD (Alimenta convenciones.md y decisiones.md) ---
+
+7. 🌈 PALETA DE COLOR SEMÁNTICA Y MODOS (DARK/LIGHT):
+   - 💡 ¿Para qué sirve?: Comunica significado y emociones respetando el contraste WCAG AA/AAA (4.5:1) (Clases 2 y 5 de UX).
+   - 📌 Ejemplos de lo que podés responder:
+     * "Color Primario: Violeta espacial (#7c3aed), Color Secundario: Cyan (#06b6d4), Éxito: Verde (#10b981), Alerta/Error: Rojo (#ef4444). Fondo Dark: Slate-950 (#020617), Fondo Light: Slate-50 (#f8fafc) con botón para alternar."
+
+8. 🔤 TIPOGRAFÍA Y ESCALA MODULAR:
+   - 💡 ¿Para qué sirve?: Establece una jerarquía visual clara y legible en pantalla (h1: 32px, h2: 24px, body: 16px, caption: 12px).
+   - 📌 Ejemplos de lo que podés responder:
+     * "Títulos en fuente Sans-serif moderna ('Outfit' o 'Poppins' de Google Fonts en negrita) y textos explicativos en 'Plus Jakarta Sans' o 'Inter' (16px, interlineado cómodo)."
+
+9. 📱 RESPONSIVE & MOBILE-FIRST:
+   - 💡 ¿Para qué sirve?: Garantiza que la interfaz sea cómoda para navegar con una sola mano en celulares con botones de al menos 44px a 60px.
+   - 📌 Ejemplos de lo que podés responder:
+     * "En computadoras 3 columnas de tarjetas; en celulares 1 sola columna vertical. El menú superior debe colapsar en un botón hamburguesa táctil."
+
+10. 🔘 LOS 5 ESTADOS DE INTERACCIÓN DE COMPONENTES:
+    - 💡 ¿Para qué sirve?: Cumple con la anatomía completa de componentes UI (Default, Hover, Active, Focus, Disabled) para dar retroalimentación constante.
+    - 📌 Ejemplos de lo que podés responder:
+      * "Botones con sombra en Default, iluminación en Hover, efecto de hundimiento en Active, borde/anillo de foco :focus-visible de alto contraste para teclado, y opacidad 50% en Disabled."
+
+--- 🛠️ BLOQUE 4: DECISIONES TÉCNICAS Y LÍMITES (Alimenta decisiones.md y arquitectura.md) ---
+
+11. 🛠️ FRAMEWORK CSS ELEGIDO Y MOTIVOS:
+    - 💡 ¿Para qué sirve?: Define el sistema de estilos para que el código sea limpio y coherente con las herramientas vistas en clase.
+    - 📌 Ejemplos de lo que podés responder:
+      * Opción A (Recomendado): "TailwindCSS v3 vía CDN con paleta extendida para maquetar rápido con clases de utilidad."
+      * Opción B: "Bootstrap 5 vía CDN."
+      * Opción C: "CSS3 Vanilla con archivo style.css y variables :root."
+
+12. ⛔ LÍMITES TÉCNICOS Y TECNOLOGÍAS PROHIBIDAS (LO QUE NO EXISTE):
+    - 💡 ¿Para qué sirve?: Frena a la IA para que no agregue frameworks complejos ni librerías pesadas no vistas en el curso.
+    - 📌 Ejemplos de lo que podés responder:
+      * "NO usar React, Vue ni Angular. NO crear backend con Node.js, Express ni Python. NO usar bases de datos SQL ni Firebase. NO usar estilos inline con style='...'. Mantener todo en un solo index.html con JavaScript limpio."
+
+--- 📋 BLOQUE 5: FLUJO DE TRABAJO, ACCESIBILIDAD Y GOTCHAS (Alimenta flujo-de-trabajo.md y errores-conocidos.md) ---
+
+13. 📋 PASOS DE TRABAJO Y CHECKLIST DE VERIFICACIÓN (DoD):
+    - 💡 ¿Para qué sirve?: Criterios de calidad técnica y de experiencia de usuario antes de dar por terminada la entrega.
+    - 📌 Ejemplos de lo que podés responder:
+      * "Checklist: 1. Fiel al wireframe de Figma, 2. Probado en celular con F12 sin scroll horizontal, 3. Navegación operable al 100% con teclado (Tab + Enter), 4. Contraste de texto verificado WCAG AA."
+
+14. ⚠️ ERRORES COMUNES A PREVENIR (GOTCHAS UX & MAQUETADO):
+    - 💡 ¿Para qué sirve?: Blindar el código contra trampas comunes de diseño y desarrollo.
+    - 📌 Ejemplos de lo que podés responder:
+      * "1. Evitar desborde horizontal en celulares agregando overflow-x: hidden, 2. Usar siempre texto blanco con contraste en botones morados/rojos en modo claro (.force-text-white), 3. Poner siempre atributo alt descriptivo en imágenes, 4. Usar siempre etiquetas &lt;button&gt; reales para elementos interactivos."
+
+============================================================
+Una vez que te responda a estas 14 preguntas:
+a) Guardá todas las respuestas en tu memoria activa (mem_save).
+b) Generá automáticamente los 6 documentos de contexto en docs/contexto/ (arquitectura.md, convenciones.md, decisiones.md, glosario.md, flujo-de-trabajo.md, errores-conocidos.md).
+c) Realizá la poda inteligente de skills en .agents/skills/ evaluando todo el contexto de nuestro proyecto, conservando las herramientas útiles para frontend/Tailwind, a11y, dinamismo DOM y SDD.</code></div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 05: MASTER CONTEXT EN 6 DOCUMENTOS
+           ========================================================================= -->
+      <section id="est-c5" class="class-module-card">
+        <div class="badge-pill">📚 CLASE 05 · 14 MIN</div>
+        <h2 class="section-title">Clase 05: Master Context Vivo en 6 Documentos (`docs/contexto/`)</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & 📚 Badge 3: Context Architect</div>
+          <p>Autogenerar el repositorio documental de 6 archivos sagrados que mantienen la memoria técnica y de UX viva, eliminando la dispersión de archivos sueltos e implementando el registro cronológico de <strong>ADRs con Fecha/Hora</strong>.</p>
+        </div>
+
+        <h3 class="sub-title">5.1. Prompt Autogenerador de Master Context</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 4: AUTOGENERADOR MASTER CONTEXT · CLASE 5</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Leé las respuestas de nuestra entrevista de contexto UX y la estructura de mi proyecto
+y generá automáticamente los 6 documentos de contexto en docs/contexto/, uno por archivo:
+
+1. arquitectura.md — stack de HTML5 y CSS/Frameworks, router SPA, relación con Frames de Figma, qué NO existe.
+2. convenciones.md — sistema de colores semánticos, escala tipográfica modular, los 5 estados de componentes (Default, Hover, Active, Focus, Disabled), espaciado Gestalt y reglas WCAG AA.
+3. decisiones.md — registro ordenado y cronológico de TODAS las decisiones tomadas con Fecha y Hora ([ADR-XXX] · [YYYY-MM-DD HH:mm]). Cada requerimiento o ajuste acordado debe registrarse aquí. Si se requiere un cambio importante o estructural, DEBÉS pedir autorización explícita antes de ejecutarlo.
+4. glosario.md — términos del dominio, reglas de negocio nucleares y tabla de rotulado orientado al usuario (labeling en lenguaje natural vs dev jargon).
+5. flujo-de-trabajo.md — integración del ciclo DCU con Spec-Driven Development adaptativo (Fast-Path vs SDD completo) y Checklist de Listo (DoD).
+6. errores-conocidos.md — gotchas de usabilidad, soluciones de contraste en modo claro, problemas de foco en teclado y ajustes de responsive móvil.
+
+Reglas:
+- Basá las especificaciones en el contexto del producto y los wireframes de Figma.
+- En decisiones.md, mantené un orden numérico y cronológico estricto con fecha y hora ([ADR-XXX] · [YYYY-MM-DD HH:mm]).
+- Si una instrucción del usuario implica un cambio importante (arquitectura, paleta semántica, cambio de framework, borrado de archivos), solicitá confirmación antes de aplicarlo y después registralo.
+- Asegurá que convenciones.md contemple los 5 estados de los componentes y accesibilidad WCAG.
+- Sé concreto y directo: cada doc se debe leer en menos de 2 minutos.</code></div>
+        </div>
+      </section>
+
+      <!-- 8. Plantillas de Referencia de Contexto -->
+      <section id="est-plantillas">
+        <h2 class="section-title">📄 5. Plantillas de Referencia del Master Context (`docs/contexto/`)</h2>
+        <p>A continuación podés consultar y copiar la estructura exacta de cada uno de los 6 documentos sagrados:</p>
+
+        <!-- Template 1: Arquitectura -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 1: docs/contexto/arquitectura.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Arquitectura del Proyecto (HTML5, CSS & Stack Frontend UX)
+
+## En una frase
+[Qué es el producto, a qué audiencia sirve y cuál es la solución de interfaz que provee (ej: SPA accesible en TailwindCSS para Rocket Pizza Lunar).]
+
+## Stack Tecnológico & UI
+- **Estructura Markup**: HTML5 Semántico (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;, &lt;button&gt;)
+- **Estilos & UI Framework**: [Ej: TailwindCSS v3 (CDN) / Bootstrap v5 / Vanilla CSS3 con Custom Properties]
+- **Tipografías**: [Ej: Google Fonts - Outfit / Inter / Plus Jakarta Sans]
+- **Lógica de Cliente**: JavaScript Vanilla ES6+ (Manipulación de DOM, Router SPA sin recarga, localStorage)
+- **Entorno Agentico**: Google Antigravity 2.0 + Gentle-AI (SDD) + Memoria Persistente Engram
+
+## Mapa de Carpetas y Módulos
+- `index.html` → Estructura HTML5 de la aplicación SPA (secciones Hero, Catálogo, Formulario y Modales).
+- `src/styles/` o `style.css` → Hojas de estilo, variables de color semántico y clases complementarias.
+- `src/js/` o `app.js` → Lógica de interacción en cliente (conmutación de vistas, apertura de modales y cambio de tema).
+- `docs/contexto/` → Master Context del proyecto (6 documentos Markdown).
+- `.agents/rules/` → Sistema Operativo & Reglas Globales (`antigravity_rules.md` con `trigger: always_on`).
+- `.agents/skills/` → Skills agenticas podadas (Tailwind, HTML5, a11y-debugging y SDD).
+
+## Relación con el Prototipo de Figma
+- Los Frames de baja fidelidad en Figma (`01-Home`, `02-Catalogo`, `03-Confirmacion`) definen el esqueleto espacial y la jerarquía de Gestalt.
+- Antigravity consume las capturas y tokens de Figma para implementar el marcado y la navegación SPA interactiva.
+
+## Lo que NO existe (y NO hay que crear)
+- NO usar librerías JS pesadas como React, Vue, Angular o Svelte.
+- NO mezclar frameworks CSS (ej: no usar clases de Bootstrap si estamos en TailwindCSS).
+- NO usar estilos inline en las etiquetas HTML (`style='...'`).
+- NO crear backends con Node.js/Express, Python ni bases de datos SQL/Firebase en este módulo frontend.</code></div>
+        </div>
+
+        <!-- Template 2: Convenciones -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 2: docs/contexto/convenciones.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Convenciones de Diseño, UI Tokens y Código Accesible
+
+## Sistema de Color Semántico
+- **Color Primario (Brand/CTA)**: [Ej: Violeta #7c3aed / Azul #2563eb]
+- **Color Secundario**: [Ej: Cyan #06b6d4 / Slate #475569]
+- **Semántico Success (Éxito)**: Verde esmeralda (#10b981)
+- **Semántico Danger (Peligro/Error)**: Rojo (#ef4444)
+- **Semántico Warning (Alerta)**: Amarillo/Ámbar (#f59e0b)
+- **Fondo Dark / Light**: Dark #020617 (slate-950) | Light #f8fafc (slate-50)
+
+## Escala Tipográfica Modular
+- `h1` (Título Principal / Hero): `32px` (`2rem`) - Negrita
+- `h2` (Títulos de Sección): `24px` (`1.5rem`) - Seminegrita
+- `h3` (Títulos de Tarjeta / Modal): `20px` (`1.25rem`)
+- `body` (Cuerpo de Texto): `16px` (`1rem`) - Interlineado 1.6
+- `caption` (Badges y Metadatos): `12px` (`0.75rem`)
+
+## Anatomía de Componentes: Los 5 Estados Obligatorios
+Todo control interactivo (&lt;button&gt;, enlaces, inputs) debe contemplar:
+1. **Default**: Apariencia inicial en reposo.
+2. **Hover**: Retroalimentación suave al posar el cursor (`brightness-110`, elevación o ligero cambio tonal).
+3. **Active**: Hundimiento visual al presionar (`scale-95` o `translate-y-0.5`).
+4. **Focus**: Anillo de foco de alto contraste (`:focus-visible`) para navegación por teclado (Desafío Mano Atada).
+5. **Disabled**: Opacidad reducida (`opacity-50`) y `cursor-not-allowed`.
+
+## Reglas de Accesibilidad Web (WCAG - POUR)
+- **Ratio de Contraste**: Mínimo **4.5:1** (Norma AA/AAA) entre texto y fondo.
+- **Clase `.force-text-white`**: Obligatoria en botones sólidos (morados/verdes/rojos) para asegurar texto blanco legible en Modo Claro.
+- **Áreas Táctiles Mínimas**: Botones y enlaces táctiles de al menos `44px` a `60px` de alto/ancho en móviles.
+- **Semántica & Atributos**: Imágenes con `alt` descriptivo, formularios con `&lt;label&gt;` asociados y botones con `&lt;button&gt;` nativo (nunca `&lt;div&gt;` o `&lt;span&gt;`).
+
+## Patrones Prohibidos
+- NUNCA usar `style="..."` inline en HTML.
+- NUNCA eliminar el indicador de foco (`outline: none` sin reemplazo visible).
+- NUNCA usar divs no semánticos como botones interactivos sin accesibilidad de teclado.</code></div>
+        </div>
+
+        <!-- Template 3: Decisiones -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 3: docs/contexto/decisiones.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Registro de Decisiones de Arquitectura y UX (ADRs)
+
+Este documento es una bitácora cronológica con Fecha y Hora de todas las decisiones técnicas y de experiencia de usuario acordadas para este proyecto.
+
+> ✋ **Regla de Autorización Obligatoria**: Si una instrucción del usuario implica un cambio estructural en el diseño, la navegación SPA, la paleta semántica o el stack, el agente **debe solicitar autorización explícita antes de ejecutarlo** y luego registrar el ADR correspondiente.
+
+---
+
+## 📌 Formato de Registro de ADRs
+
+### [ADR-001] · [2026-08-20 10:00] Elección del Framework CSS y Sistema de Diseño
+- **Contexto**: Se requiere maquetar rápidamente una SPA responsiva y moderna sin generar hojas de estilo gigantes.
+- **Decisión**: Utilizar TailwindCSS v3 vía CDN con configuración extendida de colores semánticos y tipografías Google Fonts.
+- **Consecuencias / Descartado**: Se descartan frameworks JS pesados (React/Vue) y hojas de estilo CSS desorganizadas.
+
+### [ADR-002] · [2026-08-20 10:30] Arquitectura SPA Multi-sección sin Recarga
+- **Contexto**: El usuario necesita navegar fluidamente entre Inicio, Catálogo y Formulario de Pedido.
+- **Decisión**: Implementar una arquitectura Single Page Application (SPA) en un solo archivo `index.html` gestionada mediante funciones de visualización en `app.js`.
+- **Consecuencias**: Cero tiempo de recarga, mejor experiencia de usuario y persistencia de estado con `localStorage`.
+
+### [ADR-003] · [2026-08-20 11:00] Soporte de Accesibilidad Universal (WCAG AA) y 5 Estados
+- **Contexto**: Se necesita garantizar que personas con discapacidad visual o motora puedan navegar el prototipo.
+- **Decisión**: Implementar ratio de contraste mínimo 4.5:1, navegación completa por teclado con `:focus-visible` y los 5 estados obligatorios en todos los componentes interactivos.
+- **Consecuencias**: Cumplimiento de los principios POUR y evaluación exitosa en el Desafío de la Mano Atada.
+
+---
+*(Nuevas decisiones se agregan al final respetando la numeración y fecha/hora)*</code></div>
+        </div>
+
+        <!-- Template 4: Glosario -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 4: docs/contexto/glosario.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Glosario del Dominio y Rotulado UX (Labeling)
+
+Este documento define el vocabulario del producto y los componentes de interfaz, asegurando un rotulado en lenguaje natural comprensible para el usuario final (Clase 7 de UX).
+
+---
+
+## 📖 Términos del Dominio del Producto
+- **[Nombre del Producto / Entidad]**: [Definición simple del propósito y temática].
+- **[Concepto de Negocio 1]**: [Ej: 'Pizzas Espaciales' / 'Lineup del Festival' / 'Pase General'].
+- **[Concepto de Negocio 2]**: [Ej: 'Domo de Entrega' / 'Mascota Rescatada' / 'Taller de Cerámica'].
+
+---
+
+## 🏷️ Rotulado de Interfaz (UX Mindset vs Dev Mindset)
+| Rotulado Erróneo (Dev Jargon) | Rotulado Correcto (UX Natural) | Ubicación / Componente |
+| :--- | :--- | :--- |
+| `Execute_User_Order_V2` | **Pedir Ahora / Confirmar Pedido** | Botón Principal (CTA) |
+| `Módulo_Transacciones_Log` | **Historial de Pedidos** | Barra de Navegación |
+| `User_Auth_Termination` | **Cerrar Sesión** | Menú de Usuario |
+| `Item_Array_Grid_Render` | **Nuestras Especialidades** | Encabezado de Catálogo |
+
+---
+
+## 🧩 Componentes de Interfaz de Usuario
+- **Hero Section**: Portada principal de impacto visual con propuesta de valor y CTA.
+- **Navbar**: Barra superior fija con enlaces, botón hamburguesa responsive y cambio de tema.
+- **Card (Tarjeta)**: Bloque visual que agrupa imagen, título, badge y acción secundaria aplicando Ley de Proximidad de Gestalt.
+- **Modal**: Ventana emergente flotante con información detallada y botón accesible de cierre.
+- **Feedback Toast / Alert**: Aviso visual de confirmación tras el envío exitoso de un formulario.</code></div>
+        </div>
+
+        <!-- Template 5: Flujo de Trabajo -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 5: docs/contexto/flujo-de-trabajo.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Flujo de Trabajo: Ciclo DCU & Spec-Driven Development (SDD)
+
+Este documento describe el flujo metodológico para iterar, diseñar e implementar cambios en la aplicación web combinando el Diseño Centrado en el Usuario (DCU) con el protocolo Gentle-AI (SDD).
+
+---
+
+## 🔄 El Ciclo Metodológico DCU ➔ SDD
+
+```
+[ 1. Contexto & Requisitos UX ] ➔ [ 2. Wireframe Low-Fi Figma ] ➔ [ 3. SDD explore & propose ]
+                                                                             |
+[ 6. Software Vivo & DoD ] ⬅️ [ 5. SDD apply & verify ] ⬅️ [ 4. SDD tasks ] ⬅+
+```
+
+1. **Investigación & DCU**: Entender necesidades de Personas y puntos de dolor en el User Journey Map.
+2. **Wireframing en Figma**: Definir la jerarquía visual de Gestalt y el flujo de navegación en baja fidelidad.
+3. **`sdd-explore` & `sdd-propose`**: Antigravity analiza las capturas de Figma y formula la propuesta técnica.
+4. **`sdd-tasks`**: Desglose atómico de tareas de maquetado, estilos y accesibilidad.
+5. **`sdd-apply`**: Generación e iteración del código HTML5 + CSS/Tailwind + JS.
+6. **`sdd-verify`**: Auditoría contra especificaciones, contraste WCAG y navegación por teclado.
+
+---
+
+## ✅ Criterio de Terminado (Definition of Done / DoD)
+Antes de dar por finalizada cualquier funcionalidad o componente, se debe comprobar:
+1. **Fidelidad Visual**: Coincide con la distribución y jerarquía del Wireframe de Figma.
+2. **Responsive Mobile-First**: Verificado en emulador móvil (F12) sin desborde horizontal (`overflow-x`).
+3. **Los 5 Estados Presentes**: Todo elemento interactivo posee Default, Hover, Active, Focus y Disabled.
+4. **Navegación por Teclado**: 100% operable con `TAB`, `Shift+TAB` y `Enter` con indicador `:focus` visible.
+5. **Contraste WCAG AA**: Ratio mínimo 4.5:1 verificado en Modo Claro y Modo Oscuro.
+6. **Memoria Engram**: Decisión registrada en `docs/contexto/decisiones.md` y guardada con `mem_save`.</code></div>
+        </div>
+
+        <!-- Template 6: Errores Conocidos -->
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <span class="code-tag">PLANTILLA 6: docs/contexto/errores-conocidos.md</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Plantilla</button>
+          </div>
+          <div class="code-content"><code># Registro de Errores Conocidos, Gotchas de UX & Accesibilidad
+
+Este documento recopila las trampas frecuentes de diseño y frontend resueltas para evitar regresiones o retrocesos durante el desarrollo agentico.
+
+---
+
+## 🐛 1. Trampa de Contraste en Modo Claro (Botones Ilegibles)
+- **Problema**: Al alternar a Modo Claro, algunos botones con fondo de color sólido heredan color de texto oscuro o gris, volviéndose ilegibles y violando WCAG AA.
+- **Solución**: Aplicar la clase utilitaria `.force-text-white { color: #ffffff !important; }` en botones con fondos oscuros o intensos.
+
+---
+
+## 📱 2. Desborde Horizontal en Pantallas Móviles
+- **Problema**: Uso de márgenes rígidos (`width: 500px` o márgenes negativos) que generan scroll horizontal indeseado en celulares.
+- **Solución**: Diseñar Mobile-First, utilizar anchos porcentuales o basados en grid (`w-full`, `max-w-md`), y aplicar `overflow-x: hidden` en el contenedor raíz si fuese necesario.
+
+---
+
+## ⌨️ 3. Pérdida del Indicador de Foco para Teclado
+- **Problema**: Eliminar visualmente el contorno de foco con `outline: none` sin proveer un reemplazo, dejando la interfaz inoperable para usuarios sin mouse.
+- **Solución**: Reemplazar siempre con clases de foco visibles y de alto contraste (ej: `focus:ring-2 focus:ring-purple-400 focus:outline-none`).
+
+---
+
+## 🚪 4. Cierre Inaccesible de Modales
+- **Problema**: Ventanas modales que solo pueden cerrarse haciendo clic en una 'X' pequeña, atrapando a usuarios en celulares o teclado.
+- **Solución**: Proveer botón visible de cierre de al menos `44px`, permitir cierre haciendo clic en el backdrop oscuro y escuchar la tecla `Escape` en JavaScript.</code></div>
+        </div>
+      </section>
+
+      <!-- 9. Gentle-AI & SDD Tutorial -->
+      <section id="est-sdd-tutorial">
+        <h2 class="section-title">🛡️ 6. Guía Práctica: Gentle-AI & Spec-Driven Development (SDD)</h2>
+        <p><a href="https://github.com/Gentleman-Programming/gentle-ai" target="_blank" style="color:var(--accent-cyan);text-decoration:underline;"><strong>gentle-ai</strong></a> es la arquitectura creada por Gentleman Programming para guiar a la IA bajo el estándar <strong>Spec-Driven Development (SDD)</strong>.</p>
+        
+        <div class="alert-box info">
+          <div class="alert-title">🤔 ¿Por qué usar SDD en Proyectos UX/UI?</div>
+          <p>Cuando le pides a una IA <em>"hazme un formulario o una tarjeta"</em> sin especificación previa, la IA suele saltar a codificar sin respetar contrastes, sin los 5 estados y sin coherencia con Figma. SDD invierte el proceso: <strong>Primero se investiga y diseña (`explore`, `propose`, `spec`, `tasks`) y finalmente se implementa y verifica (`apply`, `verify`)</strong>.</p>
+        </div>
+
+        <div class="feature-grid-3col" style="margin-top:1.5rem;">
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 1</span>
+            <div class="card-title">/sdd-explore</div>
+            <div class="card-desc">Investiga la idea o compara enfoques de maquetado en Tailwind sin tocar archivos de código.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 2</span>
+            <div class="card-title">/sdd-propose & /sdd-spec</div>
+            <div class="card-desc">Genera la propuesta técnica detallando estados de componentes, ratios WCAG y estructura SPA.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 3</span>
+            <div class="card-title">/sdd-tasks</div>
+            <div class="card-desc">Desglosa el cambio en una lista de tareas atómicas y medibles.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 4</span>
+            <div class="card-title">/sdd-apply</div>
+            <div class="card-desc">Antigravity escribe el código HTML5/CSS/JS marcando las tareas del checklist a medida que avanza.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 5</span>
+            <div class="card-title">/sdd-verify</div>
+            <div class="card-desc">Audita la implementación contra las especificaciones, contraste WCAG y navegación por teclado.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">PASO 6</span>
+            <div class="card-title">/sdd-archive</div>
+            <div class="card-desc">Consolida el cambio y genera el reporte oficial de entrega (<code>REPORTE_VERIFICACION_SDD.md</code>).</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 06: SKILLS AGENTICAS & PODA INTELIGENTE
+           ========================================================================= -->
+      <section id="est-c6" class="class-module-card">
+        <div class="badge-pill">✂️ CLASE 06 · 12 MIN</div>
+        <h2 class="section-title">Clase 06: Gestión de Skills Agenticas & Poda Inteligente</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & ✂️ Badge 4: Skill Hunter</div>
+          <p>Importar la biblioteca oficial de manuales de ingeniería <a href="https://github.com/sickn33/agentic-awesome-skills" target="_blank" style="color:var(--accent-purple);text-decoration:underline;">Agentic Awesome Skills</a> y realizar una <strong>poda contextual</strong> para evitar la saturación de contexto y especializar al agente en frontend accesible.</p>
+        </div>
+
+        <h3 class="sub-title">6.1. ¿Qué son las Skills y el Peligro de la Contaminación de Contexto?</h3>
+        <p>Las <em>Skills</em> son manuales de instrucciones y patrones de código que Antigravity consulta bajo demanda dentro de la carpeta <code>.agents/skills/</code>. Sin embargo, descargar cientos de habilidades de backend, mobile o bases de datos satura la ventana de contexto de la IA, consume tokens innecesarios y puede provocar que el asistente sugiera tecnologías prohibidas. Por eso, la <strong>poda inteligente</strong> evalúa los 6 documentos de <code>docs/contexto/</code> para conservar solo lo relevante.</p>
+
+        <h3 class="sub-title">6.2. Prompt 5: Importación de la Biblioteca de Skills</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 5: IMPORTACIÓN DE SKILLS · CLASE 6</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, por favor importa la biblioteca de skills para nuestro proyecto:
+1. Crea el directorio .agents/skills/ en la raíz del proyecto.
+2. Ejecuta un git clone o descarga del repositorio https://github.com/sickn33/agentic-awesome-skills dentro de .agents/skills/.
+3. Muéstrame la lista de skills descargadas al finalizar.</code></div>
+        </div>
+
+        <h3 class="sub-title">6.3. Prompt 6: Poda Inteligente Basada en Master Context</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 6: PODA INTELIGENTE DE SKILLS · CLASE 6</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, por favor realiza una auditoría y PODA INTELIGENTE de las skills en .agents/skills/ teniendo en cuenta TODO EL CONTEXTO de nuestro proyecto (nuestras 14 respuestas de la entrevista UX y los archivos en docs/contexto/):
+
+1. EVALUACIÓN INTEGRAL DEL CONTEXTO:
+   - Stack y Arquitectura (docs/contexto/arquitectura.md): Framework CSS activo (ej. TailwindCSS), HTML5 semántico, JavaScript Vanilla en cliente.
+   - Sistema de Diseño y Accesibilidad (docs/contexto/convenciones.md): 5 estados de componentes, contraste WCAG AA, accesibilidad web (a11y-debugging).
+   - Interactividad y Dinamismo (docs/contexto/arquitectura.md y decisiones.md): Navegación SPA, modales accesibles, menú responsive y feedback visual.
+   - Flujo de Trabajo y Verificación (docs/contexto/flujo-de-trabajo.md): Ciclo SDD (explore, apply, verify), checklist de entrega.
+   - Tecnologías Prohibidas (docs/contexto/decisiones.md y arquitectura.md): Lo que NO debe existir en el proyecto.
+
+2. CLASIFICACIÓN DE SKILLS:
+   - 🟢 CONSERVAR (Skills útiles para todo el ciclo del proyecto):
+     * Maquetado y clases de utilidad del framework activo (ej: TailwindCSS).
+     * Buenas prácticas de HTML5 semántico y diseño responsive.
+     * Accesibilidad web y auditoría WCAG (a11y-debugging, web-design-guidelines).
+     * Patrones de maquetado interactivo y dinámica de interfaz (DOM, modales, navegación SPA).
+     * Metodología Spec-Driven Development (Gentle-AI SDD).
+   - 🔴 ELIMINAR / PODAR (Skills incompatibles o superfluas):
+     * Frameworks CSS no utilizados (ej: Bootstrap, Bulma, Sass si usamos Tailwind).
+     * Frameworks JS pesados prohibidos (ej: React, Vue, Angular, Svelte, Next.js).
+     * Tecnologías de Backend / Base de Datos no utilizadas (ej: Node.js/Express, Python, Docker, SQL, MongoDB, Go, Rust, Java).
+     * Desarrollo móvil nativo o desktop no aplicable (ej: Flutter, React Native, Swift, Kotlin, Electron).
+
+3. ACCIÓN AUTOMÁTICA:
+   - Elimina automáticamente de .agents/skills/ todas las carpetas clasificadas como superfluas o incompatibles.
+   - Muéstrame el reporte final: lista de skills conservadas con su justificación según nuestro contexto, y lista de skills podadas.</code></div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CLASE 07: EL PUENTE FIGMA TO CODE & PROTOTIPADO VIVO
+           ========================================================================= -->
+      <section id="est-c7" class="class-module-card">
+        <div class="badge-pill" style="background:linear-gradient(135deg,#a855f7,#06b6d4);color:#fff;">🌉 CLASE 07 · 15 MIN · BOSS FIGHT</div>
+        <h2 class="section-title">Clase 07: El Gran Salto: De Wireframe en Figma a Software Vivo</h2>
+
+        <div class="alert-box info">
+          <div class="alert-title">🎯 Objetivo de Aprendizaje & 🏆 Boss: Full-Stack UX Engineer</div>
+          <p>Realizar la <strong>ingesta visual multimodal</strong> de las capturas de wireframes de Figma en Antigravity 2.0, verificar los 5 estados de componentes, auditar el contraste WCAG AA, superar el <strong>Desafío de la Mano Atada</strong> y presentar las bases del Desafío Integrador Final.</p>
+        </div>
+
+        <h3 class="sub-title">7.1. El Puente Figma ➔ Antigravity en 5 Pasos Fluidos</h3>
+        <div class="interactive-checklist" style="margin-bottom:1.5rem;">
+          <label class="check-item" for="check-step-1">
+            <input type="checkbox" id="check-step-1" data-check-id="figma_step1">
+            <div class="check-item-text">
+              <div class="check-item-title">1. Diseño de Wireframe Low-Fi en Figma</div>
+              <div class="check-item-desc">Diseño de pantallas principales respetando principios de Gestalt y jerarquía visual.</div>
+            </div>
+          </label>
+          <label class="check-item" for="check-step-2">
+            <input type="checkbox" id="check-step-2" data-check-id="figma_step2">
+            <div class="check-item-text">
+              <div class="check-item-title">2. Exportación Visual</div>
+              <div class="check-item-desc">Copiar o exportar captura directa del lienzo de Figma (PNG/JPG).</div>
+            </div>
+          </label>
+          <label class="check-item" for="check-step-3">
+            <input type="checkbox" id="check-step-3" data-check-id="figma_step3">
+            <div class="check-item-text">
+              <div class="check-item-title">3. Ingesta Multimodal en Antigravity</div>
+              <div class="check-item-desc">Adjuntar la captura en el chat de agentes con el Prompt Maestro 7.</div>
+            </div>
+          </label>
+          <label class="check-item" for="check-step-4">
+            <input type="checkbox" id="check-step-4" data-check-id="figma_step4">
+            <div class="check-item-text">
+              <div class="check-item-title">4. Orquestación Adaptativa & Master Context</div>
+              <div class="check-item-desc">Antigravity interpreta la distribución espacial contrastándola con tus 6 documentos de contexto.</div>
+            </div>
+          </label>
+          <label class="check-item" for="check-step-5">
+            <input type="checkbox" id="check-step-5" data-check-id="figma_step5">
+            <div class="check-item-text">
+              <div class="check-item-title">5. Software Vivo & Accesible</div>
+              <div class="check-item-desc">Generación de HTML5 + Tailwind + JS con los 5 estados y contraste WCAG AA verificado.</div>
+            </div>
+          </label>
+        </div>
+
+        <h3 class="sub-title">7.2. Prompt 7: Ingesta Multimodal Figma-to-Code</h3>
+        <div class="code-container" style="margin-bottom:1.5rem;">
+          <div class="code-header">
+            <div class="code-header-left">
+              <div class="code-dots"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div></div>
+              <span class="code-tag prompt-tag">PROMPT 7: INGESTA MULTIMODAL FIGMA-TO-CODE · CLASE 7</span>
+            </div>
+            <button class="copy-code-btn">📋 Copiar Prompt</button>
+          </div>
+          <div class="code-content"><code>Antigravity, he adjuntado la captura de pantalla de mi Wireframe de baja fidelidad diseñado en Figma para este proyecto.
+
+Por favor realiza la ingesta visual y maquetación de software vivo siguiendo estos pasos:
+
+1. ANÁLISIS VISUAL & LEYES DE GESTALT:
+   - Identifica la estructura general (Navbar, Hero, Grid de Tarjetas, Modales, Formularios y Footer).
+   - Analiza los agrupamientos por proximidad y semejanza, los niveles de jerarquía tipográfica y las zonas de llamado a la acción (CTA).
+   - Respeta el flujo de navegación planteado en las pantallas.
+
+2. APLICACIÓN DE MASTER CONTEXT & DESIGN SYSTEM:
+   - Consultá nuestros documentos en docs/contexto/ (arquitectura, convenciones de color semántico, tipografías y glosario).
+   - Aplicá el Framework CSS activo (ej: TailwindCSS) replicando con precisión la distribución espacial del wireframe de Figma.
+
+3. ESTADOS DE INTERACCIÓN & ACCESIBILIDAD (A11y):
+   - Implementá los 5 estados en cada componente interactivo: Default, Hover, Active, Focus (:focus visible con alto contraste para navegación por teclado) y Disabled.
+   - Asegurá que el contraste de texto cumpla con WCAG AA (4.5:1).
+   - Utilizá etiquetas semánticas (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;button&gt;, &lt;section&gt;).
+
+4. EJECUCIÓN TRANSPARENTE SDD (Gentle-AI):
+   - Ejecutá en segundo plano el ciclo explore ➔ propose ➔ tasks ➔ apply ➔ verify (https://github.com/Gentleman-Programming/gentle-ai).
+   - Entregá el código completo funcionando en index.html, style.css y app.js sin requerir instalaciones pesadas.</code></div>
+        </div>
+
+        <h3 class="sub-title">7.3. Auditoría de Accesibilidad & El Desafío de la Mano Atada</h3>
+        <div class="feature-grid-2col" style="margin-bottom:1.5rem;">
+          <div class="feature-card">
+            <div class="card-title">⌨️ La Prueba de la Mano Atada</div>
+            <div class="card-desc">Soltá el mouse por completo. Presioná <code>TAB</code> y <code>Shift+TAB</code> para recorrer todos los enlaces, botones y campos del formulario. Cada elemento enfocado debe encender un anillo brillante (:focus-visible) y ejecutarse con <code>Enter</code> o <code>Espacio</code>.</div>
+          </div>
+          <div class="feature-card">
+            <div class="card-title">🌓 Conmutación de Temas sin Ilegibilidad</div>
+            <div class="card-desc">Hacé clic en el botón de cambio de tema (☀️/🌙). Verificá que los botones primarios no hereden texto gris o ilegible aplicando siempre la clase de seguridad <code>.force-text-white</code>.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           PROYECTO DEMO ROCKET PIZZA LUNAR
+           ========================================================================= -->
+      <section id="est-demo">
+        <h2 class="section-title">💻 Proyecto de Referencia: Rocket Pizza Lunar</h2>
+        <p>En la carpeta <code>demo_app/</code> vas a encontrar la aplicación intergaláctica terminada que cumple el 100% de la rúbrica:</p>
+        
+        <div class="feature-grid-3col">
+          <div class="feature-card">
+            <span class="card-num-badge">VISTA SPA</span>
+            <div class="card-title">demo_app/index.html</div>
+            <div class="card-desc">Hero lunar, catálogo de pizzas por especie (astronautas, marcianos, cyborgs), modales de bio-compatibilidad y checkout en Créditos Lunares.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">LÓGICA CLIENTE</span>
+            <div class="card-title">demo_app/app.js & style.css</div>
+            <div class="card-desc">Filtros reactivos por especie, carruseles táctiles, persistencia en localStorage y conmutador Dark/Light mode con contraste WCAG AA.</div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">REGLAS & CONTEXTO</span>
+            <div class="card-title">.agents/rules/ & docs/contexto/</div>
+            <div class="card-desc">Reglas globales always-on y los 6 documentos sagrados con registro de decisiones ADR-001 a ADR-004.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           DESAFÍO INTEGRADOR FINAL
+           ========================================================================= -->
+      <section id="est-desafio">
+        <h2 class="section-title">🏆 Desafío Integrador Final en Equipos EFI (100 Puntos)</h2>
+        <p>Cada equipo maquetará el flujo interactivo de la característica principal de su <strong>Proyecto de EFI</strong> (Asincrónico en el hogar):</p>
+
+        <div class="alert-box purple" style="margin-bottom:1.5rem;">
+          <div class="alert-title">🎯 Alcance del Seminario & Continuidad Académica</div>
+          <p>Para la entrega del seminario <strong>solo es necesario maquetar e implementar el flujo principal de la característica más importante de la app (2 a 3 vistas/secciones clave en SPA viva)</strong>. Este prototipo servirá como base arquitectónica que los equipos continuarán completando para su presentación final al terminar la cursada.</p>
+        </div>
+
+        <div class="alert-box info" style="margin-bottom:1.5rem;">
+          <div class="alert-title">💬 ¿Cómo se Origina este Producto en el Ciclo Agéntico?</div>
+          <p>Este producto final <strong>no se improvisa al final del curso</strong>: se define desde el primer día en la <strong><a href="#est-c4-producto" style="color:var(--accent-cyan);text-decoration:underline;font-weight:700;">Entrevista UX de 14 Preguntas de la Clase 4</a></strong>. En esa instancia, cada respuesta de tu equipo alimenta el <em>Master Context</em> que Antigravity usará para maquetar la SPA respetando los límites técnicos, la accesibilidad y los 5 estados de componentes.</p>
+        </div>
+
+        <h3 class="sub-title">📦 Especificación Detallada del Producto Final (Blueprint Técnico & UX)</h3>
+        <p>Para obtener los 100 puntos de la rúbrica, el producto final entregado por el equipo debe cumplir rigurosamente con las siguientes especificaciones técnicas y de diseño:</p>
+
+        <div class="feature-grid-2col" style="margin-bottom:2rem;">
+          <div class="feature-card">
+            <span class="card-num-badge">INTERFAZ & SPA</span>
+            <div class="card-title">1. Estructura Visual del Prototipo Vivo</div>
+            <div class="card-desc">
+              • <strong>Header / Navbar fija:</strong> Logo de marca, enlaces de salto suave a secciones y conmutador Dark/Light mode.<br>
+              • <strong>Hero Section:</strong> Título con jerarquía Gestalt, subtítulo con propuesta de valor y CTA primario llamativo.<br>
+              • <strong>Catálogo Dinámico:</strong> Grilla responsive con 4 a 6 tarjetas estructuradas (imagen/icono, badge de categoría, precio/fecha y botón de acción interactivo).<br>
+              • <strong>Formulario Interactivo:</strong> Mínimo 3 campos validados en cliente que disparan un <strong>Modal Emergente Accesible</strong> con confirmación de éxito.
+            </div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">INTERACCIÓN & ACCESIBILIDAD</span>
+            <div class="card-title">2. Estándares de Usabilidad & WCAG AA</div>
+            <div class="card-desc">
+              • <strong>Los 5 Estados Obligatorios:</strong> Default, Hover, Active, Focus (anillo <code>:focus-visible</code> de alto contraste) y Disabled en todos los controles.<br>
+              • <strong>Prueba de la Mano Atada:</strong> Navegabilidad 100% operable por teclado con <code>Tab</code>, <code>Enter</code> y cierre con <code>Esc</code>.<br>
+              • <strong>Contraste WCAG AA:</strong> Ratio mínimo de 4.5:1 en ambos modos y clase <code>.force-text-white</code> en botones de acento.<br>
+              • <strong>Semántica HTML5:</strong> Uso riguroso de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;button&gt;</code> y atributos <code>alt</code>.
+            </div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">ARQUITECTURA DE CÓDIGO</span>
+            <div class="card-title">3. Stack & Archivos Entregables</div>
+            <div class="card-desc">
+              • <code>index.html</code>: Estructura semántica completa de la SPA en un solo archivo.<br>
+              • <code>style.css</code>: Variables de tokens de diseño y clases utilitarias de soporte.<br>
+              • <code>app.js</code>: Lógica de cambio de tema, filtros/interactividad, apertura/cierre accesible de modales y persistencia en <code>localStorage</code>.<br>
+              • <strong>Límites:</strong> Tailwind CSS vía CDN, sin backend ni frameworks pesados.
+            </div>
+          </div>
+          <div class="feature-card">
+            <span class="card-num-badge">GOBERNANZA AGÉNTICA</span>
+            <div class="card-title">4. Master Context & Ciclo SDD</div>
+            <div class="card-desc">
+              • <code>docs/contexto/</code>: Los 6 documentos sagrados completos (arquitectura, convenciones, decisiones ADR, glosario, flujo y errores).<br>
+              • <code>.agents/rules/antigravity_rules.md</code>: Reglas always-on del proyecto.<br>
+              • Memoria Engram: Contexto persistido con <code>mem_save</code>.<br>
+              • <code>REPORTE_VERIFICACION_SDD.md</code>: Bitácora del ciclo adaptativo de desarrollo.
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">📊 Rúbrica de Evaluación del Desafío Integrador (100 Puntos)</h3>
+
+        <div class="table-wrapper">
+          <div class="table-scroll-hint">↔️ Deslizá horizontalmente para ver la tabla completa</div>
+          <table class="editorial-table">
+            <thead>
+              <tr>
+                <th>Criterio de Evaluación</th>
+                <th>Aspectos a Evaluar</th>
+                <th style="text-align:right;">Puntaje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fidelidad a Figma & UI</strong></td>
+                <td>Traducción fiel de layout, jerarquía de Gestalt, responsive mobile-first y selector Dark/Light mode con contraste limpio.</td>
+                <td style="text-align:right;font-weight:700;color:var(--accent-purple);">25 pts</td>
+              </tr>
+              <tr>
+                <td><strong>Interactividad, 5 Estados & UI Feedback</strong></td>
+                <td>Navegación SPA fluida, modales accesibles, menú móvil responsive y presencia de los 5 estados en botones y controles.</td>
+                <td style="text-align:right;font-weight:700;color:var(--accent-purple);">25 pts</td>
+              </tr>
+              <tr>
+                <td><strong>Accesibilidad Web WCAG (POUR)</strong></td>
+                <td>Contraste mínimo 4.5:1 (AA), navegación 100% operable por teclado (:focus-visible, Tab/Enter) y semántica HTML5.</td>
+                <td style="text-align:right;font-weight:700;color:var(--accent-purple);">20 pts</td>
+              </tr>
+              <tr>
+                <td><strong>Master Context & Reglas Always-On</strong></td>
+                <td>Completitud de los 6 archivos en <code>docs/contexto/</code>, <code>antigravity_rules.md</code> activo y memoria Engram.</td>
+                <td style="text-align:right;font-weight:700;color:var(--accent-purple);">15 pts</td>
+              </tr>
+              <tr>
+                <td><strong>Proceso Agentico SDD & Reporte</strong></td>
+                <td>Ejecución del ciclo adaptativo y entrega del reporte oficial <code>REPORTE_VERIFICACION_SDD.md</code>.</td>
+                <td style="text-align:right;font-weight:700;color:var(--accent-purple);">15 pts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert-box success" style="margin-top:1.5rem;">
+          <div class="alert-title">📦 Entregables del Equipo</div>
+          <p>1. Enlace o capturas del Wireframe en Figma. <br>
+             2. Archivo ZIP o repositorio con <code>index.html</code>, <code>style.css</code> y <code>app.js</code>.<br>
+             3. Carpeta <code>docs/contexto/</code> completa.<br>
+             4. Reporte <code>REPORTE_VERIFICACION_SDD.md</code>.<br>
+             5. Video demo corto (2 a 3 minutos) demostrando navegación SPA, modal, prueba por teclado y cambio de tema.</p>
+        </div>
+
+        <div class="alert-box purple" style="margin-top:1.5rem;text-align:center;">
+          <div class="alert-title">🎓 Titulación de Honor</div>
+          <p style="font-size:1.05rem;font-weight:700;color:var(--text-main);">Full-Stack Agentic UX/UI Engineer</p>
+          <p style="margin-top:0.25rem;font-size:0.85rem;color:var(--text-muted);">Interfaz de Usuario - Desarrollo de Software - iTec 2026</p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top-btn" title="Volver al inicio">↑</button>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notification">📋 Copiado al portapapeles</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
